@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Python Flask Skeleton for Google App Engine
 
 A skeleton for building Python applications on Google App Engine with the
@@ -77,3 +78,7 @@ See [LICENSE](LICENSE)
 
 ## Author
 Logan Henriquez and Johan Euphrosine
+=======
+# Webdev-Learning
+A website made to learn a bit of web development.
+>>>>>>> 79d44c3574dee716222c64e2af61d2ee192b7d3d
