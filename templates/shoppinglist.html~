@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    {% autoescape on %}
+        <form method="GET" action="{{destination}}">
+            {% csrf_token %}
+            Type a food to add to the shopping list:
+            <input type="text" name="food">
+            {% for i in items %}
+                {% if i != "" %}
+                    <input type="hidden" name="food" value="{{i | escape}}">
+                {% endif %}
+            {% endfor %}
+            <input type="submit" value="Add">
+        </form>
+
+        {% if items %}
+            <h1>
+            Shopping List
+            </h1>
+            <ul>
+            {% for i in items %}
+                <li>
+                    {{i | escape}}
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endautoescape %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <style type="text/css">
+        .post {
+            background-color:lightgray;
+        }
+    
+        .title {
+            display: inline;
+            font-weight: bold;
+        }
+        .title-date {
+            display: inline;
+        }
+        .content {
+            background-color:pink;
+        }
+    </style>
+
+    <div class="menu">
+        <a href="blog/newpost">Write a new post</a>
+    </div>
+    {% for post in posts %}
+        <div class="post">
+            <div class="title">
+                {{post.title}}
+            </div>
+
+            <div class="title-date">
+                {{post.posted}}
+            </div>
+
+            <div class="content">
+                {{post.content}}
+            </div>
+        </div>
+        <hr>
+        <br>
+    {% endfor %}
+{% endblock %}

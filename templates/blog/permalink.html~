@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <style type="text/css">
+        .post {
+            background-color:lightgray;
+        }
+    
+        .title {
+            font-weight: bold;
+        }
+        .content {
+            background-color:pink;
+        }
+    </style>
+
+    <div class="post">
+        <div class="title">
+            {{post.title}}
+        </div>
+
+        <div class="content">
+            {{post.content}}
+        </div>
+    </div>
+    <a href="{{home}}">Back to front page of blog</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<form method="POST" action="{{destination}}">
+{% csrf_token %}
+subject:<input type="text" name = "subject">
+<br>
+Content:<br><textarea name="content" rows=30 cols=40>Type what's on your mind</textarea>
+<input type="submit" value="Post">
+</form>
+<div class="error" style="color:red">{{error}}</div>
+{% endblock %}

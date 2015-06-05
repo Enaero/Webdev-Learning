@@ -1,0 +1,2 @@
+def get_range(n):
+    return xrange(1, n+1)

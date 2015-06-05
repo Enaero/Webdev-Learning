@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+{% autoescape on %}
+    <style>
+    h1.main {text-align:center;}
+    form.art {text-align:center;}
+    div.error {color:red;}
+    p.art { white-space:PRE;
+            font-family:"Lucida Console", Monaco, monospace;
+            background-color: white;
+          }
+    a.title{white-space:PRE; font-weight:bold; color:darkgreen;}
+    </style>
+
+
+    <h1 class="main"> ASCII Chan </h1>
+
+    <form class="art" method="post" action="{{destination}}"> {% csrf_token %}
+        <textarea align="middle" name="art_submission" cols="60" rows="25">
+        {% if art == "" %}
+        Draw something pretty with ascii!
+         (()(()
+         (0=.=0)
+        .((___)).
+         (0) (0)
+        {% else %}{{art}}{% endif %}
+        </textarea>
+
+        <br>
+
+        Name your masterpiece: 
+        <input type="text" name="title_submission" value="{{title}}">
+        <br>
+        {% for i in errors %}
+            <div class="error">
+                {{i}} <br>
+            </div>
+        {% endfor %}
+        <input type="submit" value="Submit ASCII Art">
+    </form>
+
+    <hr>
+
+    {% for i in posts %}
+        <div class="post">
+        <a class="title">{{i.title}}</a> posted on {{i.created}}<br>
+        <p class="art">{{i.art}}</p>
+        </div>
+    {% endfor %}
+
+{% endautoescape %}
+{% endblock %}

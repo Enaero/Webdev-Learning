@@ -1,0 +1,17 @@
+<ol>
+    {% for i in range %}
+        <li>
+            {% if not i|divisibleby:3 and not i|divisibleby:5 %}
+                {{i}}
+            {% endif %}  
+          
+            {% if  i|divisibleby:3 %}
+                Fizz
+            {% endif %}
+
+            {% if i|divisibleby:5 %}
+                Buzz
+            {% endif %}  
+        </li>
+    {% endfor %}
+</ol>

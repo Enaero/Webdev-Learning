@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+	Hello, everyone <br> This is my first page.
+	<form method="post" action={{destination}}>{% csrf_token %}
+		<input type="text" name="super_move" value="Type in Gyarados's coolest move.">
+		<input type="submit" value="HYPER JAMMER">
+	</form>
+
+	<br><br><a href="/rot13">Super awesome rot13 translator</a>
+	<br><a href="/signup">Sign up to be greeted by a pirate!</a>
+	<br><a href="/fizzbuzz">FizzBuzz</a>
+	<br><a href="/shoppinglist">Shopping List</a>
+    <br><a href="/asciichan">AsciiChan, show the world your artistic prowess on this text board.</a>
+    <br><a href="/blog">Simple blog</a>
+
+{% endblock %}
+

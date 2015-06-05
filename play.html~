@@ -1,0 +1,8 @@
+<html>
+Hello, everyone!
+
+<form action="http://www.google.com/search">
+    <input name="box1">
+    <input type="submit">
+</form>
+</html>

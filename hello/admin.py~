@@ -1,0 +1,11 @@
+from django import http
+from django.template import Context, RequestContext, Template
+from django.template.loader import get_template
+from google.appengine.ext import db
+
+def admin(request):
+    
+    posts = db.GqlQuery("select * from AsciiArt order by created desc")
+    for post in posts:
+        if 'haha' in post.title or 'fuck' in post.title:
+            post.delete()

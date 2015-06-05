@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<style>
+    h1.main {
+        text-align:center;
+    }
+    h1 {
+        text-align:left;
+    }
+    
+    body {
+        text-align: justify;
+        background-color: #6495ed;
+    }
+</style>
+
+<html>
+    <head>
+        <title>Ferris' Webdev Experiments!</title>
+        <h1 class="main"> Ferris' Webdev Experiments!</h1>
+    </head>
+
+    <body>
+    {% block content %}
+    {% endblock %}
+    </body>
+</html>
